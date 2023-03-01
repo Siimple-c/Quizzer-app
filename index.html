@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <title>Document</title>
+</head>
+<body>
+  <main class="quiz-container">
+    <div class="timer"></div>
+    <div class="start-panel">
+      <label >Timer on
+        <input type="radio" name="timer-option" id="timer-on" value="on" >
+      </label>
+      <label >Timer off
+        <input type="radio" name="timer-option"  id="timer-off" value="off">
+      </label>
+      <button id="start-btn" disabled>START QUIZ</button>
+    </div>
+    <div class="quiz">
+      <div class="question"></div>
+      <div class="options"></div>
+      <div class="btns">
+        <a class="prevBtn" href="#">prev</a>
+        <a class="nextBtn" href="#">next</a>
+    </div>
+    </div>
+    <div class="result-panel"></div>
+  </main>
+</body>
+</html>

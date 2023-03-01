@@ -1,0 +1,54 @@
+LAYOUT (MOBILE FIRST)
+- START PAGE
+  - TIMER ON/OFF
+  - START BUTTON
+
+- Questions Page
+  - Question display screen
+  - Options 
+  - Next Btn & Prev Btn
+
+- Result Page
+  - Total score / 10
+  - List of all questions:
+    - All answers for questions from Api are marked green
+    - If answer from user is different, mark as red.
+    - If no answer is selected, mark all options gray, beneath the options display (not answered) and show correct as green
+
+- Timer will be a header that displays on every page, and will stop at the current time left on the result page
+
+PROGRAM LOGIC
+  ON LOAD
+    - Total questions 10
+    - Start button will be inactive:
+      - Timer on or off must be selected 
+      - Once timer value is set, activate start button
+    - If "timer on" is selected, set timer to 15mins for the entire quiz 
+    - If Start button is clicked, show questions and begin countdown
+    - Load questions from Api:
+      - A list of questions, answers, selectedAnswer isAnswered, and isCorrect will be loaded to a questions array
+      - Each element will have only its questions and answers rendered
+      - In a question, If an option is checked:
+        - set the selectedAnswer to the index num within the answers array 
+        - set the isAnswered to true
+        - set isCorrect to true if, selectedAnswer and correct_answer indexes match else set to false
+      -At the last question, clicking the next button submits all answered questions and stops the timer 
+        There will be an an answer checker 
+        if(element.correct_answer !== answers.find(selectedAns)) score is not increased
+        else, increase score by 1
+        display score/10
+      - Once Next button is clicked, 
+      first there will be an index number general variable
+        if next button is clicked, this number increases by 1 
+        if prev is clicked, this number reduces by 1
+        the screens of the app, i.e question screen, option screen, will be appended array elements
+        these array elements will be manipulated bt the index num general variable
+      question-screen . innertext = questions
+      - For each array element, a new screen & question will be displayed
+      - Questions will be loaded to the question display screen
+      - Options will be loaded to the options list with a forEach / map function
+      - Next button will be inactive until option is choosen
+        - After option is choosen, it will be activated and once clicked, answer will be submitted.
+        - If after the time is elapsed no answer is submitted, the question submits as (null) and changes to the next one 
+
+        !!INCOMPLETE: Finalised and adjusted with pen and paper
